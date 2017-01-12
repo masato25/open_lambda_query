@@ -1,0 +1,30 @@
+{
+    "debug": false,
+    "root_dir": "/home/query",
+    "gin_http": {
+        "enabled":  true,
+        "listen":   "0.0.0.0:9967"
+    },
+    "graph": {
+        "connTimeout": 1000,
+        "callTimeout": 5000,
+        "maxConns": 32,
+        "maxIdle": 32,
+        "replicas": 500,
+        "cluster": {
+            "graph-00": "127.0.0.1:6070",
+            "graph-01": "127.0.0.2:6070"
+        }
+    },
+    "db": {
+        "addr": "root:password@tcp(127.0.0.1:3306)/falcon_portal?charset=utf8&parseTime=True&loc=Local",
+        "idle": 10,
+        "max": 100
+    },
+    "graphdb": {
+        "addr": "root:password@tcp(127.0.0.1:3306)/graph?charset=utf8&parseTime=True&loc=Local",
+        "idle": 10,
+        "max": 100,
+        "limit": -1
+    }
+}
